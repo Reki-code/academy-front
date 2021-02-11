@@ -1,14 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import Taro from '@tarojs/taro'
+import { Router } from 'tarojs-router'
 import { AtTabBar } from 'taro-ui'
 import Home from '../../components/Home/Home'
 import Me from '../../components/Me/Me'
 
-import 'taro-ui/dist/style/index.scss'
 import './index.scss'
 
 const Index = () => {
   const [curr, setCurr] = useState(0)
 
+  useEffect(() => {
+    Taro.getStorage({
+      key: 'user',
+    })
+    .then(({ data: user }) => {
+      console.log('当前用户', user)
+    })
+    .catch((error) => {
+      console.error(error)
+      Router.navigate(
+        { url: '/pages/Login/Login' }
+      )
+    })
+  }, [])
   const content = () => {
     switch (curr) {
       case 0:
