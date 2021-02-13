@@ -25,6 +25,7 @@ const Login = () => {
     <>
       <AtForm>
         <AtInput
+          autoFocus
           name='userid'
           title='学号/工号'
           type='text'
