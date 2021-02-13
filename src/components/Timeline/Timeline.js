@@ -1,42 +1,27 @@
 import React, { useState } from 'react'
-import Calendar from 'taro-calendar-customizable'
 import { View, Text } from '@tarojs/components'
-import { AtButton, AtSwitch } from 'taro-ui'
+import { AtTimeline } from 'taro-ui'
+import Week from './Week'
 
 const Timeline = () => {
-  const [currentView, setCurrentView] = useState('2021-02-01')
-  const [selected, setSelected] = useState('2020-02-01')
-  const [isWeekView, setIsWeekView] = useState(true)
+  const today = new Date().toISOString().slice(0,10)
+  const [selectedDate, setSelectedDate] = useState(today)
+  const timelineData = [
+    { title: 'Day1: 听力口语 独家密集', content: ['20:00', '直播'], icon: 'clock', color: 'green'},
+    { title: 'Day2: 偷懒技巧 突破瓶颈', content: ['20:00', '如何像美国人一样流利说英语'], icon: 'check-circle', color: 'red'},
+    { title: 'Day3: 生活场景 实战演绎', content: ['20:00'], icon: 'clock', color: 'yellow' },
+    { title: '睡觉', content: ['不超过23:00'], icon: 'clock' }
+  ]
   return (
     <>
-      <Text>在学的课程</Text>
       <View>
-        <Calendar
-          view={isWeekView ? 'week' : 'month'}
-          currentView={currentView}
-          onCurrentViewChange={setCurrentView}
-          selectedDate={selected}
-          hideController={true}
-          onDayClick={({ value }) => {
-            setSelected(value)
-            console.log(value)
-          }}
-        />
-        <Text style={{ display: 'block', width: '100vw', textAlign: 'center' }}>
-          {currentView}
-        </Text>
-        <AtButton onClick={() => setCurrentView('2019-08')}>
-          设置view为2019-08
-      </AtButton>
-        <AtButton onClick={() => setSelected('2019-08-08')}>
-          选中2019-08-08
-      </AtButton>
-        <AtSwitch
-          title='周视图'
-          checked={isWeekView}
-          onChange={setIsWeekView}
+        <Text>在学的课程</Text>
+        <Week selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
+        <AtTimeline
+          items={timelineData}
         />
       </View>
+      <View style={ {height: '60px'} } />
     </>
   )
 }
