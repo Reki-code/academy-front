@@ -3,6 +3,7 @@ import Taro from '@tarojs/taro'
 import { Router } from 'tarojs-router'
 import { AtTabBar } from 'taro-ui'
 import Home from '../../components/Home/Home'
+import Timeline from '../../components/Timeline/Timeline'
 import Me from '../../components/Me/Me'
 
 import './index.scss'
@@ -29,7 +30,7 @@ const Index = () => {
       case 0:
         return <Home />
       case 1:
-        return <Me />
+        return <Timeline />
       case 2:
         return <Me />
     }
@@ -41,7 +42,7 @@ const Index = () => {
         fixed
         tabList={[
           { title: '主页', iconType: 'home', text: 8 },
-          { title: '私信', iconType: 'folder' },
+          { title: '今日', iconType: 'calendar' },
           { title: '我的', iconType: 'user', dot: true }
         ]}
         onClick={(value) => {
