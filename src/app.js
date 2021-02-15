@@ -1,3 +1,4 @@
+import 'taro-tailwind/dist/tailwind.css'
 import 'taro-ui/dist/style/index.scss'
 import './app.scss'
 
