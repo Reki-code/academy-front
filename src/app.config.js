@@ -2,7 +2,8 @@ export default {
   pages: [
     'pages/index/index',
     'pages/Announcement/Announcement',
-    'pages/Login/Login'
+    'pages/Login/Login',
+    'pages/CourseDetail/CourseDetail'
   ],
   window: {
     backgroundTextStyle: 'light',
