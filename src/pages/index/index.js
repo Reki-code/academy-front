@@ -9,6 +9,11 @@ import Me from '../../components/Me/Me'
 import './index.scss'
 
 const Index = () => {
+  const tabs = [
+    { content: <Home />, title: '主页', iconType: 'home' },
+    { content: <Timeline />, title: '今日', iconType: 'calendar' },
+    { content: <Me />, title: '我的', iconType: 'user' }
+  ]
   const [curr, setCurr] = useState(0)
 
   useEffect(() => {
@@ -25,29 +30,14 @@ const Index = () => {
       )
     })
   }, [])
-  const content = () => {
-    switch (curr) {
-      case 0:
-        return <Home />
-      case 1:
-        return <Timeline />
-      case 2:
-        return <Me />
-    }
-  }
+
   return (
     <>
-      { content()}
+      { tabs[curr].content }
       <AtTabBar
         fixed
-        tabList={[
-          { title: '主页', iconType: 'home', text: 8 },
-          { title: '今日', iconType: 'calendar' },
-          { title: '我的', iconType: 'user', dot: true }
-        ]}
-        onClick={(value) => {
-          setCurr(value)
-        }}
+        tabList={tabs}
+        onClick={setCurr}
         current={curr}
       />
     </>
