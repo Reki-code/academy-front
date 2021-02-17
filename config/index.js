@@ -40,6 +40,13 @@ const config = {
           generateScopedName: '[name]__[local]___[hash:base64:5]'
         }
       }
+    },
+    webpackChain(chain) {
+      // 该插件会影响 resolve.extensions 的表现，删除
+      chain.resolve.plugins.delete('MultiPlatformPlugin')
+      // 支持 .taro.js 后缀，不再支持多平台后缀
+      chain.resolve.extensions.prepend('.taro.js')
+      chain.resolve.extensions.prepend('.mjs')
     }
   },
   h5: {
