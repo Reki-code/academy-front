@@ -1,3 +1,3 @@
 export default {
-  navigationBarTitleText: '公告'
+  navigationBarTitleText: '公告',
 }

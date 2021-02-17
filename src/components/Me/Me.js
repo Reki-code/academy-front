@@ -1,6 +1,8 @@
 import React from 'react'
 import { View, Text } from '@tarojs/components'
-import { AtAvatar, AtButton, AtList, AtListItem } from 'taro-ui'
+import {
+  AtAvatar, AtButton, AtList, AtListItem,
+} from 'taro-ui'
 import Taro from '@tarojs/taro'
 import { Router } from 'tarojs-router'
 
@@ -20,7 +22,7 @@ const Me = () => {
       <AtAvatar circle image='https://jdc.jd.com/img/200' />
       <Text>
         Display name
-			</Text>
+      </Text>
       <Text>
         UID
       </Text>

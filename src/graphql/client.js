@@ -1,13 +1,13 @@
 import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client'
 import Taro from '@tarojs/taro'
 
-const fetch = (url, { body: data, ...fetchOptions }) => {
-  return Taro.request({ url, data, ...fetchOptions, dataType: 'txt', responseType: 'text' })
-    .then((res) => {
-      res.text = () => Promise.resolve(res.data)
-      return res
-    })
-}
+const fetch = (url, { body: data, ...fetchOptions }) => Taro.request({
+  url, data, ...fetchOptions, dataType: 'txt', responseType: 'text',
+})
+  .then((res) => {
+    res.text = () => Promise.resolve(res.data)
+    return res
+  })
 
 const uri = 'http://192.168.1.10:4000'
 
@@ -24,7 +24,7 @@ const httpLink = new HttpLink(httpInit)
 
 const client = new ApolloClient({
   link: httpLink,
-  cache: new InMemoryCache()
+  cache: new InMemoryCache(),
 })
 
 export default client

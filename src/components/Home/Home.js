@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Swiper, SwiperItem, View, Text } from '@tarojs/components'
+import { Swiper, SwiperItem, View } from '@tarojs/components'
 import { Router } from 'tarojs-router'
 import {
   AtNoticebar,
@@ -13,10 +13,10 @@ const Home = () => {
     console.log('to ann')
     Router.navigate(
       { url: '/pages/Announcement/Announcement' },
-      { data: '' }
+      { data: '' },
     )
   }
-  
+
   return (
     <>
       <Swiper
@@ -51,14 +51,14 @@ const Home = () => {
           title='标题文字'
           note='描述信息'
           arrow='right'
-          iconInfo={{ size: 25, color: '#78A4FA', value: 'calendar', }}
+          iconInfo={{ size: 25, color: '#78A4FA', value: 'calendar' }}
         />
         <AtListItem
           title='标题文字'
           note='描述信息'
           extraText='详细信息'
           arrow='right'
-          iconInfo={{ size: 25, color: '#FF4949', value: 'bookmark', }}
+          iconInfo={{ size: 25, color: '#FF4949', value: 'bookmark' }}
         />
       </AtList>
       <AtList>

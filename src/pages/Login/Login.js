@@ -8,18 +8,18 @@ const Login = () => {
   const [password, setPassword] = useState('')
   const handleLogin = () => {
     const user = {
-      userid, password
+      userid, password,
     }
     Taro.setStorage({
       key: 'user',
-      data: user
+      data: user,
     })
-    .then(() => {
-      console.log('登录用户', user)
-      Router.navigate(
-        { url: '/pages/index/index' }
-      )
-    })
+      .then(() => {
+        console.log('登录用户', user)
+        Router.navigate(
+          { url: '/pages/index/index' },
+        )
+      })
   }
   return (
     <>
@@ -30,20 +30,22 @@ const Login = () => {
           title='学号/工号'
           type='text'
           value={userid}
-          onChange={(value) => {setUserid(value); return value}}
+          onChange={(value) => { setUserid(value); return value }}
         />
         <AtInput
           name='password'
           title='密码'
           type='password'
           value={password}
-          onChange={(value) => {setPassword(value); return value}}
+          onChange={(value) => { setPassword(value); return value }}
         />
-        <AtButton 
+        <AtButton
           formType='submit'
           type='primary'
           onClick={handleLogin}
-        >登录</AtButton>
+        >
+          登录
+        </AtButton>
       </AtForm>
     </>
   )

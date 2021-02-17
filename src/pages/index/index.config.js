@@ -1,3 +1,3 @@
 export default {
-  navigationBarTitleText: '在线学堂'
+  navigationBarTitleText: '在线学堂',
 }
