@@ -42,6 +42,8 @@
     "@tarojs/runtime": "3.0.26",
     "@tarojs/taro": "3.0.26",
     "lodash": "4.17.15",
+    "mp-colorui": "^0.6.19",
+    "postcss": "^7.0.0",
     "react": "^16.10.0",
     "react-dom": "^16.10.0",
     "taro-calendar-customizable": "^2.1.2",

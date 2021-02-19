@@ -6,6 +6,6 @@ module.exports = {
   },
   mini: {},
   h5: {
-    esnextModules: ['taro-ui']
+    esnextModules: ['taro-ui', 'mp-colorui']
   }
 }

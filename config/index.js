@@ -43,7 +43,7 @@ const config = {
     }
   },
   h5: {
-    esnextModules: ['taro-ui'],
+    esnextModules: ['taro-ui', 'mp-colorui'],
     publicPath: '/',
     staticDirectory: 'static',
     postcss: {

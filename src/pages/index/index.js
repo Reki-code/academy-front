@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Taro from '@tarojs/taro'
 import { Router } from 'tarojs-router'
 import { AtTabBar } from 'taro-ui'
+import { ClButton } from 'mp-colorui'
 import Home from '../../components/Home/Home'
 import Timeline from '../../components/Timeline/Timeline'
 import Me from '../../components/Me/Me'
@@ -33,6 +34,7 @@ const Index = () => {
 
   return (
     <>
+      <ClButton>buttons</ClButton>
       { tabs[curr].content }
       <AtTabBar
         fixed
