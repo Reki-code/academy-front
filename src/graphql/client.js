@@ -9,7 +9,7 @@ const fetch = (url, { body: data, ...fetchOptions }) => Taro.request({
     return res
   })
 
-const uri = 'http://192.168.1.10:4000'
+const uri = 'http://39.103.172.209:4000/graphql'
 
 if (process.env.TARO_ENV === 'h5') {
   console.log('client init in h5')

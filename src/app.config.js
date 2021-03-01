@@ -1,14 +1,12 @@
 export default {
   pages: [
-    'pages/index/index',
-    'pages/Announcement/Announcement',
     'pages/Login/Login',
-    'pages/CourseDetail/CourseDetail'
+    'pages/Detail/Detail',
   ],
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
     navigationBarTitleText: 'WeChat',
-    navigationBarTextStyle: 'black'
-  }
+    navigationBarTextStyle: 'black',
+  },
 }

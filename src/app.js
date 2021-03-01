@@ -5,9 +5,9 @@ import 'taro-ui/dist/style/index.scss'
 import './app.scss'
 import client from './graphql/client'
 
-const App = (props) => (
+const App = ({ children }) => (
   <ApolloProvider client={client}>
-    { props.children }
+    { children }
   </ApolloProvider>
 )
 

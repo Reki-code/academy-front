@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Taro from '@tarojs/taro'
+import { Button } from '@tarojs/components'
 import { Router } from 'tarojs-router'
 import { AtTabBar } from 'taro-ui'
 import Home from '../../components/Home/Home'
@@ -31,6 +32,32 @@ const Index = () => {
 
   return (
     <>
+      <Button onClick={() => {
+        Router.navigate(
+          { url: '/pages/Detail/Detail' },
+        )
+      }}
+      >
+        webview test
+      </Button>
+      <Button onClick={() => {
+        Taro.login()
+          .then(res => {
+            console.log(res)
+          })
+      }}
+      >
+        login
+      </Button>
+      <Button
+        openType='getUserInfo'
+        onGetUserInfo={(e) => {
+          console.log(e.detail)
+          console.log(e.detail.userInfo.nickName)
+        }}
+      >
+        getUserInfo
+      </Button>
       { tabs[curr].content }
       <AtTabBar
         fixed
